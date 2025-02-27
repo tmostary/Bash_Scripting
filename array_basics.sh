@@ -1,12 +1,13 @@
 #!/bin/bash
-#Declare an array of fruits
+
+# Declare an array of fruits
 
 fruits=( "apple" "orange" "graphs" "banana")
 
-#Print all elements
+# Print all elements
 echo "List of Fruits: ${fruits[@]}"
 
-#Declare an array with Space/newlines
+# Declare an array with Space/newlines
 
 books=("1984" "Brave new world" "Fahrenheit 451")
 
@@ -17,32 +18,29 @@ echo "Name of book: $newlines"
 
 done
 
-#Access to an array elements
+# Access to an array elements
 echo "First fruits: ${fruits[0]}"
 echo "All the fruits: ${fruits[@]}"
 echo "Indices: ${!fruits[@]}"
 echo "Number of elements: ${#fruits[@]}"
 
-#Modifying an array by adding and removing
-#Adding Element
+# Modifying an array by adding and removing
+# Adding Element
 
 fruits+=("cherry" "lime")
 
 echo "Modifying list of fruits: ${fruits[@]}"
 
-#Update an element in array
+# Update an element in array
 fruits[2]="Parsimon"
 echo "New list of fruits: ${fruits[@]}"
 
 
-#remove an element from the array
+# Remove an element from the array
 unset fruits[3]
 echo "After Deletion new list: ${fruits[@]}"
 
-#Loop through arrays using for loops:
-
-
-#!/bin/bash
+# Loop through arrays using for loops:
 
 teams=("Developers" "Designers" "QA" "DevOps")
 
@@ -57,3 +55,15 @@ for team in "${teams[@]}"; do
 done
 
 
+# Associative Arrays
+
+declare -A user_roles 
+user_roles=(
+  ["Nabil"]="admin"
+  ["Minhaz"]="developer"
+  ["Yasin"]="guest"
+)
+
+echo "Nabil's role: ${user_roles["Nabil"]}"
+echo "All users: ${!user_roles[@]}"
+echo "All roles: ${user_roles[@]}"
